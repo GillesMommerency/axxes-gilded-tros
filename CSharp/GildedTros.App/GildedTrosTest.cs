@@ -197,5 +197,19 @@ namespace GildedTros.App
             Assert.Equal(expectedQuality, items[0].Quality);
             #endregion
         }
+
+        [Theory]
+        [InlineData("Duplicate Code", 0, 1, 0)] // Sellin 0 => degrade 4 => floor 0
+        [InlineData("Elixir of the SOLID", 0, 1, 0)]  // normal item => degrade 2 => floor 0
+        [InlineData("Good Wine", 0, 49, 50)] // good wine => gain 2 => cap 50
+        [InlineData("Good Wine", 0, 50, 50)] // already 50 => stay 50
+        public void EdgeCases(string name, int sellIn, int startQuality, int expectedQuality)
+        {
+            var items = new List<Item> { new Item { Name = name, SellIn = sellIn, Quality = startQuality } };
+            var app = new GildedTros(items);
+
+            app.UpdateQuality();
+            Assert.Equal(expectedQuality, items[0].Quality);
+        }
     }
 }

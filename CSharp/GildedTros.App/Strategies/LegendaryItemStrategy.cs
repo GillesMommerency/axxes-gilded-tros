@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace GildedTros.App.Strategies
 {
-    public class LegendaryItemStrategy : IItemUpdateStrategy
+    public class LegendaryItemStrategy : BaseItemStrategy
     {
-        public void UpdateItem(Item item)
+        protected override void UpdateItemCore(Item item)
         {
             // never changes for now
+        }
+
+        protected override void EnforceBoundaries(Item item)
+        {
+            item.Quality = 80;
         }
     }
 }

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace GildedTros.App.Strategies
 {
-    public class BackstagePassStrategy : IItemUpdateStrategy
+    public class BackstagePassStrategy : BaseItemStrategy
     {
-        public void UpdateItem(Item item)
+        protected override void UpdateItemCore(Item item)
         {
             item.SellIn--;
 

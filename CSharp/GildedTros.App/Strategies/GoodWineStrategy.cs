@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace GildedTros.App.Strategies
 {
-    public class GoodWineStrategy : IItemUpdateStrategy
+    public class GoodWineStrategy : BaseItemStrategy
     {
-        public void UpdateItem(Item item)
+        protected override void UpdateItemCore(Item item)
         {
             item.SellIn--;
 
