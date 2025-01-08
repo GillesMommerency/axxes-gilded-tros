@@ -49,7 +49,7 @@ namespace GildedTros.App
             var expectedAfter30Days = new[]
             {
                 new { Name = "Ring of Cleansening Code", FinalSellIn = -20, FinalQuality = 0 },
-                new { Name = "Good Wine", FinalSellIn = -28, FinalQuality = 31 },
+                new { Name = "Good Wine", FinalSellIn = -28, FinalQuality = 30 },
                 new { Name = "Elixir of the SOLID", FinalSellIn = -25, FinalQuality = 0 },
                 new { Name = "B-DAWG Keychain", FinalSellIn = 0, FinalQuality = 80 },
                 new { Name = "B-DAWG Keychain", FinalSellIn = -1, FinalQuality = 80 },

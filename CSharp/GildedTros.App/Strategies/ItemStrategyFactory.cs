@@ -20,6 +20,13 @@ namespace GildedTros.App.Strategies
              || itemName == "Backstage passes for HAXX")
                 return new BackstagePassStrategy();
 
+            if (itemName == "Duplicate Code"
+                 || itemName == "Long Methods"
+                 || itemName == "Ugly Variable Names")
+            {
+                return new SmellyItemStrategy();
+            }
+
             return new RegularItemStrategy();
         }
     }
